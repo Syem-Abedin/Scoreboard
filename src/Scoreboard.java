@@ -1,6 +1,6 @@
 public class Scoreboard {
-    String team1 = "";
-    String team2 = "";
+    static String team1 = "";
+    static String team2 = "";
     static int Orange = 0;
     static int Yellow = 0;
     static int Red = 0;
@@ -26,27 +26,42 @@ public class Scoreboard {
             } else {
                 points2 += pnt;
             }
-            if (a.equals("Orange")) Orange += pnt;
-            if (b.equals("Orange")) Orange += pnt;
-            if (a.equals("Yellow")) Yellow += pnt;
-            if (b.equals("Yellow")) Yellow += pnt;
-            if (a.equals("Red")) Red += pnt;
-            if (b.equals("Red")) Red += pnt;
-            if (a.equals("Green")) Green += pnt;
-            if (b.equals("Green")) Green += pnt;
-            if (a.equals("Violet")) Violet += pnt;
-            if (b.equals("Violet")) Violet += pnt;
-            if (a.equals("Indigo")) Indigo += pnt;
-            if (b.equals("Indigo")) Indigo += pnt;
-            if (a.equals("Blue")) Blue += pnt;
-            if (b.equals("Blue")) Blue += pnt;
         } else {
             firstTeam = !firstTeam;
         }
     }
 
     public static String getScoreStatic() {
-        if (points1 > points2) return points1 + "-" + points2;
-        return points1 + "-" + points2;
+        if (points1 > points2) return points1 + "-" + points2 + "-" + team1;
+        return points2 + "-" + points1 + "-" + team2;
+    }
+    public static void reset() {
+        static int Orange = 0;
+        static int Yellow = 0;
+        static int Red = 0;
+        static int Green = 0;
+        static int Violet = 0;
+        static int Indigo = 0;
+        static int Blue = 0;
+    }
+    public static String colorScoreRecord() {
+        if (points1 > points2) {
+            if (team1.equals("Orange")) Orange += 1;
+            if (team1.equals("Yellow")) Yellow += 1;
+            if (team1.equals("Red")) Red += 1;
+            if (team1.equals("Green")) Green += 1;
+            if (team1.equals("Violet")) Violet += 1;
+            if (team1.equals("Indigo")) Indigo += 1;
+            if (team1.equals("Blue")) Blue += 1;
+        }
+        if (points2 > points1) {
+            if (team2.equals("Orange")) Orange += 1;
+            if (team2.equals("Yellow")) Yellow += 1;
+            if (team2.equals("Red")) Red += 1;
+            if (team2.equals("Green")) Green += 1;
+            if (team2.equals("Violet")) Violet += 1;
+            if (team2.equals("Indigo")) Indigo += 1;
+            if (team2.equals("Blue")) Blue += 1;
+        }
     }
 }
