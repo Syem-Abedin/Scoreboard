@@ -25,6 +25,7 @@ public class Main {
             String b = "";
             if (!s.hasNextInt()) {
                 Scoreboard.colorScoreRecord();
+                Scoreboard.reset();
                 a = s.next();
                 b = s.next();
                 names.constructor(a, b);

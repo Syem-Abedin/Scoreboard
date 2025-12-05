@@ -36,15 +36,10 @@ public class Scoreboard {
         return points2 + "-" + points1 + "-" + team2;
     }
     public static void reset() {
-        static int Orange = 0;
-        static int Yellow = 0;
-        static int Red = 0;
-        static int Green = 0;
-        static int Violet = 0;
-        static int Indigo = 0;
-        static int Blue = 0;
+        points1 = 0;
+        points2 = 0;
     }
-    public static String colorScoreRecord() {
+    public static void colorScoreRecord() {
         if (points1 > points2) {
             if (team1.equals("Orange")) Orange += 1;
             if (team1.equals("Yellow")) Yellow += 1;
